@@ -93,6 +93,7 @@ public void draw() {
 
     switch(hour()) {
     case 0 :
+    case 12:
       if (word.equals("Twelve")) fill(important);
       break;
     case 1 :
