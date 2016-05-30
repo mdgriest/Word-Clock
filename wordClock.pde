@@ -14,11 +14,31 @@ int fontStep = 1;
 String fontName = "Helvetica-Light"; //Change this to use a different typeface
 
 //Change these hex values to use a different color scheme of your choosing
-color bg = #4B4747; //Dark gray
-color important = #F27074; //Red
-color plain = #6D7889; //Dark gray-blue
-//color secondary = #99CCFF; //Pale blue
-color secondary = #F3F4F2; //White
+color red = #F27074;
+color darkRed = #8E2800;
+color clay = #B64926;
+color yellow = #FFA500;
+color paleYellow = #FFFF9D;
+color orange = #FF6138;
+color green = #468966;
+color limeGreen = #BDF271;
+color lightGreen = #BEEB9F;
+color middleGreen = #79BD8F;
+color blueGreen = #00A388;
+color blue = #1E90FF;
+color dullBlue = #348899;
+color aqua = #29D9C2;
+color lightBlue = #99CCFF;
+color darkGrayBlue = #6D7889;
+color lightGray = #D4D4D4;
+color middleGray = #AAAAAA;
+color darkGray = #4B4747;
+color white = #F3F4F2;
+
+color bg = darkGray;
+color important = red;
+color plain = darkGrayBlue;
+color secondary = white;
 
 int minuteTensPlace;
 int minuteOnesPlace;
@@ -260,17 +280,53 @@ void draw() {
 }
 
 void keyPressed() {
-  // ] (Increase font size)
-  if (keyCode == 93) {
+  // Increase font size
+  if (keyCode == ']') {
     fontSize = min(fontSize + fontStep, maxFontSize);
     font = createFont(fontName, fontSize);
     textFont(font);
   }
-  // [ (Decrease font size)
-  else if (keyCode == 91) {
+  // Decrease font size)
+  else if (key == '[' ) {
     fontSize = max(fontSize - fontStep, minFontSize);
     font = createFont(fontName, fontSize);
     textFont(font);
   }
-  else print(width, height);
+  //Color modes
+  else if( key == '1' ){
+      bg = white;
+      important = darkGray;
+      plain = lightGray;
+      secondary = middleGray;
+  }
+  else if( key == '2' ){
+      bg = green;
+      important = limeGreen;
+      plain = blueGreen;
+      secondary = paleYellow;
+  }
+  else if( key == '3' ){
+      bg = darkRed;
+      important = white;
+      plain = red;
+      secondary = lightGray;
+  }
+  else if( key == '4' ){
+      bg = darkGray;
+      important = aqua;
+      plain = darkGrayBlue;
+      secondary = limeGreen;
+  }
+  else if( key == '5' ){
+      bg = blue;
+      important = white;
+      plain = middleGray;
+      secondary = darkGray;
+  }
+  else if( key == '0' ){
+      bg = darkGray;
+      important = red;
+      plain = darkGrayBlue;
+      secondary = white;
+  }
 }

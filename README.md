@@ -14,6 +14,17 @@ To run Word Clock, you will need to have Java 8 installed on your machine. You c
 
 ## Out-of-the-Box Customization
 
+### Color Scheme
+
+Word Clock comes with six default color schemes, which you cycle through using the numbers on your keyboard (1-5, 0 for default).
+
+![](screenshots/red.png)
+![](screenshots/white.png)
+![](screenshots/green.png)
+![](screenshots/plume.png)
+![](screenshots/blue.png)
+
+I have included the hex codes for many colors, but defining your own color schemes is easy following the style already in the code. I recommend using [Adobe Kuler](https://color.adobe.com/explore/most-popular/?time=all) or [Paletton](http://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF) for help finding great color combinations.
 
 ### Clock size
 

@@ -30,11 +30,31 @@ int fontStep = 1;
 String fontName = "Helvetica-Light"; //Change this to use a different typeface
 
 //Change these hex values to use a different color scheme of your choosing
-int bg = 0xff4B4747; //Dark gray
-int important = 0xffF27074; //Red
-int plain = 0xff6D7889; //Dark gray-blue
-//color secondary = #99CCFF; //Pale blue
-int secondary = 0xffF3F4F2; //White
+int red = 0xffF27074;
+int darkRed = 0xff8E2800;
+int clay = 0xffB64926;
+int yellow = 0xffFFA500;
+int paleYellow = 0xffFFFF9D;
+int orange = 0xffFF6138;
+int green = 0xff468966;
+int limeGreen = 0xffBDF271;
+int lightGreen = 0xffBEEB9F;
+int middleGreen = 0xff79BD8F;
+int blueGreen = 0xff00A388;
+int blue = 0xff1E90FF;
+int dullBlue = 0xff348899;
+int aqua = 0xff29D9C2;
+int lightBlue = 0xff99CCFF;
+int darkGrayBlue = 0xff6D7889;
+int lightGray = 0xffD4D4D4;
+int middleGray = 0xffAAAAAA;
+int darkGray = 0xff4B4747;
+int white = 0xffF3F4F2;
+
+int bg = darkGray;
+int important = red;
+int plain = darkGrayBlue;
+int secondary = white;
 
 int minuteTensPlace;
 int minuteOnesPlace;
@@ -276,19 +296,55 @@ public void draw() {
 }
 
 public void keyPressed() {
-  // ] (Increase font size)
-  if (keyCode == 93) {
+  // Increase font size
+  if (keyCode == ']') {
     fontSize = min(fontSize + fontStep, maxFontSize);
     font = createFont(fontName, fontSize);
     textFont(font);
   }
-  // [ (Decrease font size)
-  else if (keyCode == 91) {
+  // Decrease font size)
+  else if (key == '[' ) {
     fontSize = max(fontSize - fontStep, minFontSize);
     font = createFont(fontName, fontSize);
     textFont(font);
   }
-  else print(width, height);
+  //Color modes
+  else if( key == '1' ){
+      bg = white;
+      important = darkGray;
+      plain = lightGray;
+      secondary = middleGray;
+  }
+  else if( key == '2' ){
+      bg = green;
+      important = limeGreen;
+      plain = blueGreen;
+      secondary = paleYellow;
+  }
+  else if( key == '3' ){
+      bg = darkRed;
+      important = white;
+      plain = red;
+      secondary = lightGray;
+  }
+  else if( key == '4' ){
+      bg = darkGray;
+      important = aqua;
+      plain = darkGrayBlue;
+      secondary = limeGreen;
+  }
+  else if( key == '5' ){
+      bg = blue;
+      important = white;
+      plain = middleGray;
+      secondary = darkGray;
+  }
+  else if( key == '0' ){
+      bg = darkGray;
+      important = red;
+      plain = darkGrayBlue;
+      secondary = white;
+  }
 }
   public void settings() {  size(150, 550); }
   static public void main(String[] passedArgs) {
