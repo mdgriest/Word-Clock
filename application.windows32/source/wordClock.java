@@ -18,7 +18,7 @@ public class wordClock extends PApplet {
    Mitchell Griest
  Word Clock
  Summer 2016
-
+ 
  mdgriest@crimson.ua.edu
  */
 
@@ -51,10 +51,10 @@ int middleGray = 0xffAAAAAA;
 int darkGray = 0xff4B4747;
 int white = 0xffF3F4F2;
 
-int bg = darkGray;
-int important = red;
-int plain = darkGrayBlue;
-int secondary = white;
+int bg;
+int important;
+int plain;
+int secondary;
 
 int minuteTensPlace;
 int minuteOnesPlace;
@@ -63,6 +63,10 @@ public void setup() {
   
   surface.setResizable(true);
   surface.setTitle("Word Clock");
+  bg = darkGray;
+  important = aqua;
+  plain = darkGrayBlue;
+  secondary = limeGreen;
   background(bg);
 
   //Print names of all fonts on this machine to the console to help pick a new one
@@ -78,11 +82,11 @@ public void draw() {
   background(bg);
 
   String[]allWords = {
-    "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
-    "o'clock", "oh",
-    "ten", "twenty", "thirty", "forty", "fifty",
-    "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
-    "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+    "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", 
+    "o'clock", "oh", 
+    "ten", "twenty", "thirty", "forty", "fifty", 
+    "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", 
+    "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", 
   };
 
   //Set initial x and y position for drawing the words
@@ -166,7 +170,7 @@ public void draw() {
     else {
       switch(minuteTensPlace) {
       case 0:
-        if (word.equals("oh")) fill(important);
+        if (word.equals("oh") && minute() != 0) fill(important);
         break;
       case 1:
         switch(minute()) {
@@ -309,43 +313,39 @@ public void keyPressed() {
     textFont(font);
   }
   //Color modes
-  else if( key == '1' ){
-      bg = white;
-      important = darkGray;
-      plain = lightGray;
-      secondary = middleGray;
-  }
-  else if( key == '2' ){
-      bg = green;
-      important = limeGreen;
-      plain = blueGreen;
-      secondary = paleYellow;
-  }
-  else if( key == '3' ){
-      bg = darkRed;
-      important = white;
-      plain = red;
-      secondary = lightGray;
-  }
-  else if( key == '4' ){
-      bg = darkGray;
-      important = aqua;
-      plain = darkGrayBlue;
-      secondary = limeGreen;
-  }
-  else if( key == '5' ){
-      bg = blue;
-      important = white;
-      plain = middleGray;
-      secondary = darkGray;
-  }
-  else if( key == '0' ){
-      bg = darkGray;
-      important = red;
-      plain = darkGrayBlue;
-      secondary = white;
+  else if ( key == '1' ) {
+    bg = white;
+    important = darkGray;
+    plain = lightGray;
+    secondary = middleGray;
+  } else if ( key == '2' ) {
+    bg = green;
+    important = limeGreen;
+    plain = blueGreen;
+    secondary = paleYellow;
+  } else if ( key == '3' ) {
+    bg = darkRed;
+    important = white;
+    plain = red;
+    secondary = lightGray;
+  } else if ( key == '4' ) {
+    bg = darkGray;
+    important = red;
+    plain = darkGrayBlue;
+    secondary = white;
+  } else if ( key == '5' ) {
+    bg = blue;
+    important = white;
+    plain = middleGray;
+    secondary = darkGray;
+  } else if ( key == '0' ) {
+    bg = darkGray;
+    important = aqua;
+    plain = darkGrayBlue;
+    secondary = limeGreen;
   }
 }
+
   public void settings() {  size(150, 550); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "wordClock" };
