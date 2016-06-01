@@ -42,11 +42,15 @@ You can also increase and decrease the size of the font by using the `]` and `[`
 
 ## Feel free to alter the code to your taste
 
-I have included a few notes where I anticipate you may want to make changes. For example, if you prefer a differnt typeface, color scheme, or default size for the clock, just update the appropriate lines in the sketch (`wordClock.pde`)
+I have included a few notes where I anticipate you may want to make changes. For example, if you prefer a different typeface, color scheme, or default size for the clock, just update the appropriate lines in the sketch (`wordClock.pde`)
 
 ## Have fun!
 
 The Word Clock is something I built in an afternoon for fun. There is certainly plenty of room for improvement in the way things work under the hood, but it does what it is supposed to and looks good while doing it. If you find any major flaws in the program, please feel free to write an Issue describing them and I will patch things up in the future.
+
+If you enjoy the Word Clock, you might also like my [Word Stopwatch](https://github.com/mdgriest/Word-Stopwatch). Both applications are free and the source code is publicly available on [GitHub](https://github.com/mdgriest).
+
+![](screenshots/stopwatch.png)
 
 Best,
 
