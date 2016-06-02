@@ -60,6 +60,8 @@ void setup() {
   fontSize = 25;
   font = createFont(fontName, fontSize);
   textFont(font);
+  
+  frameRate(2);
 }
 
 void draw() {

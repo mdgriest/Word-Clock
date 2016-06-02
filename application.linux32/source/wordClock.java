@@ -76,6 +76,8 @@ public void setup() {
   fontSize = 25;
   font = createFont(fontName, fontSize);
   textFont(font);
+  
+  frameRate(2);
 }
 
 public void draw() {
@@ -345,7 +347,6 @@ public void keyPressed() {
     secondary = limeGreen;
   }
 }
-
   public void settings() {  size(150, 550); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "wordClock" };
