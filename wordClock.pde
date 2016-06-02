@@ -61,7 +61,7 @@ void setup() {
   font = createFont(fontName, fontSize);
   textFont(font);
   
-  frameRate(2);
+  frameRate(14);
 }
 
 void draw() {
